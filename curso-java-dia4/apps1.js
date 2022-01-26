@@ -17,24 +17,22 @@ errorNombre[0].innerHTML = ""
 errorAsunto[0].innerHTML = ""
 errorMensaje[0].innerHTML = ""
 
-const regExpLetras = /[a-zA-Z]\w+/gi;
+const regExpLetras = /^[a-zA-Z\u00f1\u00d1]\w+/;
 
-if (!nombre.value.trim()){
-   console.log("El nombre es requerido");
-   errorNombre[0].innerHTML = "El nombre es requerido"
-   
-}
+
 if (!regExpLetras.test(nombre.value)){
    errorNombre[0].innerHTML = "Solo se permiten letras"
 }
-if (!asunto.value.trim()){
+
+if (!regExpLetras.test(asunto.value)){
     errorAsunto[0].innerHTML = "El asunto es requerido"
     
 }
-if (!mensaje.value.trim()){
+if (!regExpLetras.test(mensaje.value)){
     errorMensaje[0].innerHTML = "El mensaje es requerido"
-    return;
+    
    }
+if (!regExpLetras.test(nombre.value) || !regExpLetras.test(asunto.value) || !regExpLetras.test(mensaje.value)) return;
 
       resultado[0].innerHTML = "El mensaje fue enviado con éxito"
    });
