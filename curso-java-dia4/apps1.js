@@ -36,5 +36,5 @@ if (!mensaje.value.trim()){
     return;
    }
 
-      resultado[0].innerHTML = "El mensaje fue enviado con exito"
+      resultado[0].innerHTML = "El mensaje fue enviado con éxito"
    });
